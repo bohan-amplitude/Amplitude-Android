@@ -357,7 +357,7 @@ public class AmplitudeClient {
                 try {
                     if (callFactory == null) {
                         // defer OkHttp client to first call
-                        final Provider<Call.Factory> callProvider
+                        final Provider<OkHttpClient> callProvider
                                 = DoubleCheck.provider(OkHttpClient::new);
                         this.callFactory = request -> callProvider.get().newCall(request);
                     } else {
